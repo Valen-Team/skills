@@ -270,6 +270,10 @@ For private data, prefer a local runtime.
 - Write a held-out set before you iterate, and a second one after you freeze the final version.
   Check each change on cases you did not tune on: a clause that fixes one tuning case often moves
   others.
+- When the user weighs Valen against an LLM, run the same questions through `Valen.llm(provider,
+  model)` in the Python SDK. It returns the same typed response, so the same decision code and
+  labelled cases score both, with tokens and latency for each. Its probabilities are the LLM's
+  stated estimates; compare decisions on labelled cases, not probability values.
 
 ### When an answer looks wrong
 
