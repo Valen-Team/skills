@@ -297,12 +297,14 @@ answers. The structural fix is usually better state, a separate question, or cod
 
 ## Patterns
 
-Complete recipes in the [cookbook](https://valen-team.github.io/cookbook/), each runnable end to end:
+Complete recipes in the [cookbook](https://valen-team.github.io/cookbook/), grouped by goal. Each runs end to end, offline from recorded answers or live against the API:
 
 | Goal | Questions | Recipe |
 | --- | --- | --- |
-| Route with review | Choice over intents plus `none`, Nouls for flags | [support router built with this skill](https://valen-team.github.io/cookbook/skill-support-router.md), [calibrated routing](https://valen-team.github.io/cookbook/calibrated-routing.md), [unknown categories](https://valen-team.github.io/cookbook/unknown-categories.md) |
-| Screen images against a checklist | One Noul per rule over the same photo | [product screening](https://valen-team.github.io/cookbook/product-screening.md) |
-| Tag video | Per-frame questions, averaged in code | [video tagging](https://valen-team.github.io/cookbook/video-tagging.md) |
-| Run locally | Same request shape over ONNX or a local service | [local inference](https://valen-team.github.io/cookbook/local-inference.md) |
-| Adapt to a domain | Fine-tune when state and wording are not enough | [domain fine-tuning](https://valen-team.github.io/cookbook/domain-finetuning.md) |
+| Route and fill arguments | Choice over intents or functions, a predicate for the null case, every argument asked speculatively | [function calling](https://valen-team.github.io/cookbook/function-calling.md), [support router built with this skill](https://valen-team.github.io/cookbook/skill-support-router.md), [calibrated routing](https://valen-team.github.io/cookbook/calibrated-routing.md), [unknown categories](https://valen-team.github.io/cookbook/unknown-categories.md) |
+| Select instead of generate | Code finds candidate values; a choice picks one, a predicate says whether any fits | [pick the right date](https://valen-team.github.io/cookbook/value-extraction.md) |
+| Find and judge evidence | One predicate per retrieved item, in its own request; sort in code | [rerank](https://valen-team.github.io/cookbook/rerank.md) |
+| Verify and escalate | Separate "supported" and "contradicted" predicates; one predicate per policy rule | [citation check](https://valen-team.github.io/cookbook/citation-check.md), [LLM guardrails](https://valen-team.github.io/cookbook/llm-guardrails.md) |
+| Inspect images and video | One predicate per field or checklist rule; the same questions per frame, smoothed in code | [scanned forms](https://valen-team.github.io/cookbook/document-check.md), [product screening](https://valen-team.github.io/cookbook/product-screening.md), [event timeline](https://valen-team.github.io/cookbook/event-monitoring.md), [video tagging](https://valen-team.github.io/cookbook/video-tagging.md) |
+| Turn answers into data | One score per dimension; weights live in code | [composite scoring](https://valen-team.github.io/cookbook/composite-scoring.md) |
+| Run locally or adapt | Same request shape over ONNX or a local service; fine-tune when state and wording are not enough | [local inference](https://valen-team.github.io/cookbook/local-inference.md), [domain fine-tuning](https://valen-team.github.io/cookbook/domain-finetuning.md) |
