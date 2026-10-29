@@ -1,0 +1,17 @@
+{
+  "name": "valen-team",
+  "owner": {
+    "name": "Valen Team",
+    "url": "https://valen-team.github.io"
+  },
+  "metadata": {
+    "description": "Agent skills for building with Valen, the multimodal System One decision model."
+  },
+  "plugins": [
+    {
+      "name": "valen",
+      "description": "Question design, state design, request composition, thresholds and runtime choice for Valen integrations",
+      "source": "./"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+[
+ {
+  "id": "d001",
+  "image": "media/visualdecisionbench_image/docvqa/52629-82c479119b11.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d002",
+  "image": "media/visualdecisionbench_image/docvqa/42297-60fe7f5edef1.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d003",
+  "image": "media/visualdecisionbench_image/rico_screenqa/35853_1458-a96fd3ca74a6.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d004",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1075_143-90ba4d1af3e6.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d005",
+  "image": "media/visualdecisionbench_image/chartqa/101-2ad7217aea03.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d006",
+  "image": "media/visualdecisionbench_image/chartqa/43-01e69f479379.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d007",
+  "image": "media/visualdecisionbench_image/ocrvqa/006066567X_0-766f7fb27966.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d008",
+  "image": "media/visualdecisionbench_image/ocrvqa/002573900X_1-56bdcdc39101.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d009",
+  "image": "media/visualdecisionbench_image/vizwiz/15-84926263509f.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "d010",
+  "image": "media/visualdecisionbench_image/vizwiz/72-adec912bb299.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "d011",
+  "image": "media/visualdecisionbench_image/vizwiz/43-63135080ddd0.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "d012",
+  "image": "media/visualdecisionbench_image/scienceqa/4192-eb9716c4b753.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "d013",
+  "image": "media/visualdecisionbench_image/iconqa/16997-28e3c9e4702c.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ }
+]

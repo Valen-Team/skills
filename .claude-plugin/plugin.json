@@ -1,0 +1,13 @@
+{
+  "name": "valen",
+  "version": "0.1.0",
+  "description": "Agent skills for building with Valen, the multimodal System One decision model.",
+  "author": {
+    "name": "Valen Team",
+    "url": "https://valen-team.github.io"
+  },
+  "homepage": "https://valen-team.github.io/docs/valen/agent-skill/",
+  "repository": "https://github.com/Valen-Team/skills",
+  "license": "Apache-2.0",
+  "keywords": ["valen", "system-one", "decision-model", "multimodal", "classification"]
+}

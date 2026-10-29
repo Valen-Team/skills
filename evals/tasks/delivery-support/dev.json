@@ -1,0 +1,102 @@
+[
+ {
+  "id": "d01",
+  "message": "My order says delivered but nothing came. Where is it??",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "missing_or_wrong_item",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d02",
+  "message": "Been waiting 50 minutes, app says rider is 2 min away for the last 20 min",
+  "order_status": "on_the_way",
+  "expected": {
+   "queue": "late_order",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d03",
+  "message": "The laksa was ice cold and half of it spilled in the bag. I want a refund.",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "food_quality",
+   "safety": false,
+   "compensation": true
+  }
+ },
+ {
+  "id": "d04",
+  "message": "I was charged twice for order 4471",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "payment_refund",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d05",
+  "message": "Can't log in, the OTP never arrives",
+  "order_status": "none",
+  "expected": {
+   "queue": "account_access",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d06",
+  "message": "我点的奶茶少了一杯",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "missing_or_wrong_item",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d07",
+  "message": "Found a piece of plastic in my fried rice!!",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "food_quality",
+   "safety": true,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d08",
+  "message": "Your rider was super friendly today, thanks!",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "human_review",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d09",
+  "message": "Food was 40 min late and the fries were missing too",
+  "order_status": "delivered",
+  "expected": {
+   "queue": "human_review",
+   "safety": false,
+   "compensation": false
+  }
+ },
+ {
+  "id": "d10",
+  "message": "hello?",
+  "order_status": "none",
+  "expected": {
+   "queue": "human_review",
+   "safety": false,
+   "compensation": false
+  }
+ }
+]

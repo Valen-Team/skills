@@ -1,0 +1,74 @@
+[
+ {
+  "id": "d001",
+  "video": "media/visualdecisionbench_video/8c/8cc7b4c0be903b4bce8cf1bbb4cc396d27a286a03fac0854c612d677534a3528.mp4",
+  "expected": {
+   "setting": "kitchen",
+   "activity": "cooking",
+   "people": "none"
+  }
+ },
+ {
+  "id": "d002",
+  "video": "media/visualdecisionbench_video/6e/6e2452ad6ece72ec48aa245faa153a294a1a359b178fa8f9ceb71e777d91930c.mp4",
+  "expected": {
+   "setting": "kitchen",
+   "activity": "cooking",
+   "people": "one"
+  }
+ },
+ {
+  "id": "d003",
+  "video": "media/visualdecisionbench_video/c9/c9dcd5f46867fd4efe63d035f808a844dcbaa5584717de4b7624feced828ff87.mp4",
+  "expected": {
+   "setting": "outdoor",
+   "activity": "sport_or_exercise",
+   "people": "one"
+  }
+ },
+ {
+  "id": "d004",
+  "video": "media/visualdecisionbench_video/7d/7dd5305d0fe57042562d52509a0e73203949c249af9786a38c979c10a93ac833.mp4",
+  "expected": {
+   "setting": "indoor",
+   "activity": "talking",
+   "people": "several"
+  }
+ },
+ {
+  "id": "d005",
+  "video": "media/visualdecisionbench_video/1e/1e187a1e0852fcd6771c887e1b721d2c499882639ff3b61feb882fe2c1d91172.mp4",
+  "expected": {
+   "setting": "indoor",
+   "activity": "other",
+   "people": "one"
+  }
+ },
+ {
+  "id": "d006",
+  "video": "media/visualdecisionbench_video/e0/e06ef60178cd69fe98ae2d9cb5f48c02e39aff7bcd423dd0acc5fee6e23a3faf.mp4",
+  "expected": {
+   "setting": "outdoor",
+   "activity": "other",
+   "people": "none"
+  }
+ },
+ {
+  "id": "d007",
+  "video": "media/visualdecisionbench_video/60/6067529d0397bd0a55edfc1718e7c9a136bd6b7cc1d08b194fd6a2efb9b12db8.mp4",
+  "expected": {
+   "setting": "outdoor",
+   "activity": "other",
+   "people": "several"
+  }
+ },
+ {
+  "id": "d008",
+  "video": "media/visualdecisionbench_video/59/595e91aca1a891a98e94bd3d2c8ae007893ad7d8756bfa65dba83d0b020ab2d7.mp4",
+  "expected": {
+   "setting": "screen",
+   "activity": "other",
+   "people": "none"
+  }
+ }
+]

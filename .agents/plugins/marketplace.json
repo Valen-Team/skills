@@ -1,0 +1,20 @@
+{
+  "name": "valen-team",
+  "interface": {
+    "displayName": "Valen Team"
+  },
+  "plugins": [
+    {
+      "name": "valen",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

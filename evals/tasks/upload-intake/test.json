@@ -1,0 +1,812 @@
+[
+ {
+  "id": "x001",
+  "image": "media/visualdecisionbench_image/vizwiz/142-97244f2257a0.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x002",
+  "image": "media/visualdecisionbench_image/rico_screenqa/62208_1686-d20f74d0160e.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x003",
+  "image": "media/visualdecisionbench_image/rico_screenqa/74_7-4c6cef25670c.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x004",
+  "image": "media/visualdecisionbench_image/ocrvqa/006093008X_0-08086ed93947.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x005",
+  "image": "media/visualdecisionbench_image/ocrvqa/006227628X_0-f4adefaf3e79.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x006",
+  "image": "media/visualdecisionbench_image/textvqa/34662-11902a2f5348.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x007",
+  "image": "media/visualdecisionbench_image/chartqa/114-938fd7217e66.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x008",
+  "image": "media/visualdecisionbench_image/vizwiz/76-1ba84b35520e.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x009",
+  "image": "media/visualdecisionbench_image/rico_screenqa/36049_1492-9eebf56f934e.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x010",
+  "image": "media/visualdecisionbench_image/scienceqa/2623-53177cc55b10.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x011",
+  "image": "media/visualdecisionbench_image/docvqa/43222-0b41132fe260.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x012",
+  "image": "media/visualdecisionbench_image/ocrvqa/006229766X_2-e4ef3f3a8ac2.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x013",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1062_141-e3b1a221f81b.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x014",
+  "image": "media/visualdecisionbench_image/aokvqa/87sGM3r7nnhwncMAKMtbuo-03e3653181f4.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x015",
+  "image": "media/visualdecisionbench_image/aokvqa/NmKj6PbaycvbudUKgRzibs-03d860016c9b.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x016",
+  "image": "media/visualdecisionbench_image/docvqa/21710-009faa6c8be5.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x017",
+  "image": "media/visualdecisionbench_image/rico_screenqa/35639_1441-8fd1b610d8a6.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x018",
+  "image": "media/visualdecisionbench_image/docvqa/63685-b6722176c408.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x019",
+  "image": "media/visualdecisionbench_image/textvqa/34623-f04d2e2aed70.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x020",
+  "image": "media/visualdecisionbench_image/docvqa/59443-febb16de266e.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x021",
+  "image": "media/visualdecisionbench_image/textvqa/34705-d51c74f5cfb2.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x022",
+  "image": "media/visualdecisionbench_image/docvqa/6028-b1c667d46fb1.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x023",
+  "image": "media/visualdecisionbench_image/vizwiz/22-51b278b47f15.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x024",
+  "image": "media/visualdecisionbench_image/ocrvqa/006185414X_0-65c13753d821.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x025",
+  "image": "media/visualdecisionbench_image/iconqa/29586-80b663946993.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x026",
+  "image": "media/visualdecisionbench_image/vizwiz/13-ffb959ac0356.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x027",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1732_223-cc71af39db2f.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x028",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1658_212-dcf4ae46303e.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x029",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1139_152-28cb8e81e915.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x030",
+  "image": "media/visualdecisionbench_image/ocrvqa/002863800X_2-a258fc92583e.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x031",
+  "image": "media/visualdecisionbench_image/chartqa/119-3b3fb6524a30.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x032",
+  "image": "media/visualdecisionbench_image/chartqa/81-4ca3566c295b.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x033",
+  "image": "media/visualdecisionbench_image/textvqa/34620-24ca79ba93e1.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x034",
+  "image": "media/visualdecisionbench_image/textvqa/34747-535266eff208.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x035",
+  "image": "media/visualdecisionbench_image/vizwiz/34-f0dab30bc1b8.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x036",
+  "image": "media/visualdecisionbench_image/rico_screenqa/52875_632-a9113f60a8f7.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x037",
+  "image": "media/visualdecisionbench_image/chartqa/72-8993d79bfe8f.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x038",
+  "image": "media/visualdecisionbench_image/ocrvqa/006089072X_0-007764b7cd18.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x039",
+  "image": "media/visualdecisionbench_image/textvqa/34730-6d4246ba467e.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x040",
+  "image": "media/visualdecisionbench_image/docvqa/43122-db13e5029083.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x041",
+  "image": "media/visualdecisionbench_image/chartqa/110-694e0be4cf0b.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x042",
+  "image": "media/visualdecisionbench_image/vizwiz/161-8d57b6942c0e.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x043",
+  "image": "media/visualdecisionbench_image/chartqa/11-3bf7e6f8df6e.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x044",
+  "image": "media/visualdecisionbench_image/ocrvqa/006228987X_0-0188f5c90359.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x045",
+  "image": "media/visualdecisionbench_image/chartqa/18-b4fb50a173c7.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x046",
+  "image": "media/visualdecisionbench_image/chartqa/88-c0782187f100.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x047",
+  "image": "media/visualdecisionbench_image/vizwiz/165-56b46e184770.jpg",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x048",
+  "image": "media/visualdecisionbench_image/scienceqa/2627-ef6e2417f2b4.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x049",
+  "image": "media/visualdecisionbench_image/vizwiz/159-ed78c9bdafe8.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x050",
+  "image": "media/visualdecisionbench_image/ocrvqa/006017093X_0-43e7d7d14e40.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x051",
+  "image": "media/visualdecisionbench_image/vizwiz/8-47a17987d743.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x052",
+  "image": "media/visualdecisionbench_image/rico_screenqa/1264_170-e8a6db0e90e3.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x053",
+  "image": "media/visualdecisionbench_image/vizwiz/32-94ddd28ff7e6.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x054",
+  "image": "media/visualdecisionbench_image/aokvqa/e52REttPVvHxGe9H9Y8iya-7c45a1cc24fc.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x055",
+  "image": "media/visualdecisionbench_image/textvqa/34661-ef3fdd136412.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x056",
+  "image": "media/visualdecisionbench_image/aokvqa/Ar8D5FwKT47LcGDqJXXLjK-9c3c15980f71.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x057",
+  "image": "media/visualdecisionbench_image/docvqa/18617-c76e64af375c.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x058",
+  "image": "media/visualdecisionbench_image/ocrvqa/000755589X_0-15b4606d11bd.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x059",
+  "image": "media/visualdecisionbench_image/vizwiz/4-d3f91221fdc1.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x060",
+  "image": "media/visualdecisionbench_image/docvqa/43790-cb4786673daa.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x061",
+  "image": "media/visualdecisionbench_image/docvqa/50467-6417be66a381.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x062",
+  "image": "media/visualdecisionbench_image/aokvqa/8SzR5UpGtrsFWoxheZ9SkE-bb6e42affa36.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x063",
+  "image": "media/visualdecisionbench_image/ocrvqa/006222087X_2-3cc1c09f9476.jpg",
+  "expected": {
+   "kind": "book_cover",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x064",
+  "image": "media/visualdecisionbench_image/iconqa/35768-1b9998a28298.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x065",
+  "image": "media/visualdecisionbench_image/vizwiz/21-ae83f052d2c1.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x066",
+  "image": "media/visualdecisionbench_image/aokvqa/gNrbLyhKYG8AMtxJTgB7E2-5a9554e86832.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x067",
+  "image": "media/visualdecisionbench_image/vizwiz/154-06a844c40fd7.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x068",
+  "image": "media/visualdecisionbench_image/rico_screenqa/6644_816-1e0283cc24b6.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x069",
+  "image": "media/visualdecisionbench_image/vizwiz/67-89830858631c.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x070",
+  "image": "media/visualdecisionbench_image/scienceqa/113-273da3b9fabe.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x071",
+  "image": "media/visualdecisionbench_image/vizwiz/69-bc1c502a6018.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x072",
+  "image": "media/visualdecisionbench_image/vizwiz/6-aa2a5fba8b89.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x073",
+  "image": "media/visualdecisionbench_image/vizwiz/115-8ada72686626.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x074",
+  "image": "media/visualdecisionbench_image/chartqa/141-0af33df0eb07.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x075",
+  "image": "media/visualdecisionbench_image/chartqa/58-75fad993daf9.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x076",
+  "image": "media/visualdecisionbench_image/gqa/10432224-a0f00939fcca.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x077",
+  "image": "media/visualdecisionbench_image/chartqa/69-56b2de7fa0c6.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x078",
+  "image": "media/visualdecisionbench_image/vizwiz/173-bd59f38da5e1.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x079",
+  "image": "media/visualdecisionbench_image/docvqa/676-79a1cc4de434.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x080",
+  "image": "media/visualdecisionbench_image/vizwiz/19-a41998d33b89.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x081",
+  "image": "media/visualdecisionbench_image/docvqa/42115-248f6dab810f.png",
+  "expected": {
+   "kind": "document",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x082",
+  "image": "media/visualdecisionbench_image/iconqa/52145-fc3235b80e2c.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x083",
+  "image": "media/visualdecisionbench_image/vizwiz/14-0ac754d747b5.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x084",
+  "image": "media/visualdecisionbench_image/textvqa/34706-51765fbf5378.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x085",
+  "image": "media/visualdecisionbench_image/iconqa/77950-0177e351ce7a.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x086",
+  "image": "media/visualdecisionbench_image/vizwiz/126-660ce15d045c.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": false,
+   "usable": false
+  }
+ },
+ {
+  "id": "x087",
+  "image": "media/visualdecisionbench_image/rico_screenqa/56620_1003-6bb14df40ca0.jpg",
+  "expected": {
+   "kind": "screenshot",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x088",
+  "image": "media/visualdecisionbench_image/gqa/14578801-11343c85fb31.jpg",
+  "expected": {
+   "kind": "photo",
+   "readable_text": true,
+   "usable": true
+  }
+ },
+ {
+  "id": "x089",
+  "image": "media/visualdecisionbench_image/iconqa/12500-3af2fad2801b.png",
+  "expected": {
+   "kind": "diagram",
+   "readable_text": false,
+   "usable": true
+  }
+ },
+ {
+  "id": "x090",
+  "image": "media/visualdecisionbench_image/chartqa/8-b9fa39512b25.png",
+  "expected": {
+   "kind": "chart",
+   "readable_text": true,
+   "usable": true
+  }
+ }
+]

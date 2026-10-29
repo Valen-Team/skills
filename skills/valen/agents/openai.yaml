@@ -1,0 +1,4 @@
+interface:
+  display_name: "Valen"
+  short_description: "Build integrations with the Valen decision model."
+  default_prompt: "Use Valen to route these messages, with human review for uncertain cases."
