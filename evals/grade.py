@@ -61,10 +61,10 @@ def score(rows, outputs):
             "accuracy": accuracy, "exact_match": exact / n, "errors": errors, "items": per_item}
 
 
-def grade(workspace, task, solutions=("v1/solution.py", "solution.py"), timeout=3600):
+def grade(workspace, task, solutions=("v1/solution.py", "solution.py"), timeout=3600, env=None, tag=""):
     workspace = Path(workspace).resolve()
     rows, items = test_items(task)
-    items_file = workspace / ".grade_items.json"
+    items_file = workspace / f".grade_items{tag}.json"
     items_file.write_text(json.dumps(items, ensure_ascii=False))
     report = {"task": task}
     for name in solutions:
@@ -72,10 +72,10 @@ def grade(workspace, task, solutions=("v1/solution.py", "solution.py"), timeout=
         if not path.exists():
             report[name] = {"missing": True}
             continue
-        out_file = workspace / f".grade_{name.replace('/', '_')}.json"
+        out_file = workspace / f".grade_{name.replace('/', '_')}{tag}.json"
         proc = subprocess.run([interpreter(workspace), str(EVALS / "predict_worker.py"), str(path),
                                str(items_file), str(out_file)], cwd=workspace, capture_output=True,
-                              text=True, timeout=timeout)
+                              text=True, timeout=timeout, env=env)
         if proc.returncode or not out_file.exists():
             report[name] = {"crashed": True, "stderr": proc.stderr[-2000:]}
             continue

@@ -68,3 +68,33 @@ First-version score on the hidden test sets, 2026-10-29, Claude Code and Codex a
 With the skill, every first version scored at least 86.8%. Without it, each agent produced one first version that failed outright: Claude marked every image unusable after thresholding a vague question at 0.5, and Codex sent eight frames per request to an endpoint that accepts one, so every video request returned HTTP 400. On the other tasks the arms were close. Final versions scored 86.5–98.1% in all arms. Runs on the same task differ by up to 8 points, so add runs before reading small differences.
 
 The best text run is published as the [support-router recipe](https://valen-team.github.io/cookbook/skill-support-router/).
+
+## Every model behind the same code
+
+The agents' first versions call Valen's hosted API. To ask whether a design holds up with another model, [`models.py`](models.py) runs each saved `v1/solution.py` unchanged and intercepts its Valen calls: Valen backends receive the original request with only `model` replaced; LLM backends answer the same questions through JevalKit's LLM baselines, with the response translated back to the API's format. Each cell averages the saved first versions for that task: three with the skill (Claude Code ×2, Codex ×1) and two without (Claude Code, Codex), 2026-10-30.
+
+| Backend | Delivery, no skill | Delivery, skill | Upload, no skill | Upload, skill | Clips, no skill | Clips, skill | **No skill** | **Skill** | USD / item |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| valen-4b | 95.4 | 97.3 | 88.0 | 90.2 | 46.6 | 90.4 | **76.7** | **92.6** | 0 |
+| valen-2b | 88.6 | 89.4 | 74.9 | 92.0 | 46.4 | 93.4 | **70.0** | **91.6** | 0 |
+| valen-0.8b | 86.9 | 86.5 | 74.5 | 88.4 | 46.3 | 92.1 | **69.3** | **89.0** | 0 |
+| claude-sonnet-5-5 | 98.1 | 97.8 | 90.5 | 93.3 | 96.9 | 97.3 | **95.2** | **96.1** | 0.00193 |
+| gpt-6-luna | 98.8 | 98.7 | 90.5 | 92.7 | 95.5 | 95.2 | **94.9** | **95.5** | 0.00024 |
+| gpt-5.6-terra | 98.6 | 98.5 | 85.4 | 89.9 | 96.4 | 94.0 | **93.4** | **94.1** | 0.01222 |
+| gemini-3.8-flash | 98.3 | 97.4 | 90.0 | 89.9 | 95.5 | 94.8 | **94.6** | **94.0** | 0.00217 |
+| claude-haiku-4-5 | 91.0 | 89.4 | 85.2 | 82.7 | 82.5 | 82.5 | **86.2** | **84.9** | 0.00174 |
+
+- **The skill removes failures rather than raising the typical score.** Medians with and without it are close on every backend. On Valen, 2 of 6 first versions without the skill failed: Codex's video design sends eight frames per request, which the hosted API rejects, so it scores 0 on every size (GPT-6 Luna accepts all eight and scores 95.7); Claude's upload design thresholds a vague usability question and scores 60.3 and 58.7 on Valen 2B and 0.8B. With the skill, the worst of 9 first versions scores 84.1 on Valen 4B. LLM backends do not enforce the hosted API's one-image limit.
+- **Final versions close the gap.** After iterating on dev data, designs without the skill reach 93.6 (4B) and 93.4 (2B); the skill's contribution is a first version that already works.
+- **LLM conditions.** LLMs answer through an OpenAI-compatible gateway with JSON-schema output; Claude, served through its Messages API, returned schema-shaped JSON inside a Markdown fence, which is unwrapped. Answers that are not valid JSON count as errors (Claude Haiku: 9 of 1,156 calls). Costs use list prices on the tokens the gateway reported and billed; for Claude these leave out image inputs, which Anthropic's direct pricing adds. Times are median seconds per item from this machine, Valen on the free hosted API.
+
+```bash
+pip install "jevalkit @ git+https://github.com/Valen-Team/JevalKit"
+python evals/models.py --runs evals/results/baseline-2 evals/results/codex-baseline-2 evals/results/smoke-1 \
+  --backends valen-4b valen-2b valen-0.8b
+GATEWAY_API_KEY=... python evals/models.py --runs ... --backends gpt-6-luna claude-sonnet-5-5 \
+  --gateway https://gateway.example/v1
+python evals/summarize_models.py --calls calls.csv
+```
+
+`--calls` writes every model call (start time, provider request ID, tokens, estimated cost) for reconciling against provider billing.

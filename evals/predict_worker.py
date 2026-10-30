@@ -3,11 +3,18 @@
 import concurrent.futures
 import importlib.util
 import json
+import os
 import sys
 import time
 from pathlib import Path
 
 solution, items_path, out_path = map(Path, sys.argv[1:4])
+if os.environ.get("VALEN_EVAL_BACKEND"):
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import backends
+
+    backends.install(json.loads(os.environ["VALEN_EVAL_BACKEND"]), os.environ["VALEN_EVAL_CALLS"],
+                     solution.relative_to(Path.cwd()).as_posix())
 sys.path.insert(0, str(solution.parent))
 spec = importlib.util.spec_from_file_location("solution_under_test", solution)
 module = importlib.util.module_from_spec(spec)
