@@ -286,8 +286,8 @@ Check, in this order:
 5. the other questions in the request and their order;
 6. the wording.
 
-Then read the [question design](https://valen-team.github.io/docs/valen/question-design.md) page for
-the hard cases already recorded and how to restructure around them. If a clear question with
+Then read the [known limitations](https://valen-team.github.io/docs/valen/known-limitations.md) page for
+the cases already measured and how to restructure around them. If a clear question with
 complete state still gets a confidently wrong answer, collect the payload and open an issue at
 [Valen-Team/Valen](https://github.com/Valen-Team/Valen/issues).
 
