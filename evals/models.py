@@ -1,7 +1,7 @@
 """Grade the agents' solutions with other models answering their Valen calls.
 
 python evals/models.py --runs evals/results/baseline-2 evals/results/codex-baseline-2 evals/results/smoke-1 \\
-    --backends valen-0.8b valen-2b valen-4b
+    --backends valen-1.5-0.8b valen-1.5-2b valen-1.5-4b
 
 LLM backends need an OpenAI-compatible gateway that also serves Anthropic's /messages:
     --gateway https://gateway.example/v1 --gateway-token-env GATEWAY_API_KEY
@@ -18,9 +18,13 @@ from grade import grade
 
 EVALS = Path(__file__).resolve().parent
 BACKENDS = {
+    # Valen-Decision-1.0 results, 2026-10-30; the hosted ids now serve Valen-Decision-1.5.
     "valen-0.8b": {"kind": "valen", "model": "valen-0.8b", "price": "valen:valen-0.8b"},
     "valen-2b": {"kind": "valen", "model": "valen-2b", "price": "valen:valen-2b"},
     "valen-4b": {"kind": "valen", "model": "valen-4b", "price": "valen:valen-4b"},
+    "valen-1.5-0.8b": {"kind": "valen", "model": "valen-0.8b", "price": "valen:valen-0.8b"},
+    "valen-1.5-2b": {"kind": "valen", "model": "valen-2b", "price": "valen:valen-2b"},
+    "valen-1.5-4b": {"kind": "valen", "model": "valen-4b", "price": "valen:valen-4b"},
     "gpt-6-luna": {"kind": "llm", "adapter": "LLM-OpenAI", "model": "gpt-6-luna", "price": "openai:gpt-6-luna"},
     "gpt-5.6-terra": {"kind": "llm", "adapter": "LLM-OpenAI", "model": "gpt-5.6-terra", "price": "openai:gpt-5.6-terra"},
     "gemini-3.8-flash": {"kind": "llm", "adapter": "LLM-OpenAI", "model": "gemini-3.8-flash",

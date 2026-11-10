@@ -94,8 +94,8 @@ docs are unreachable, use the protocol table above, or read the types in the ins
 | --- | --- |
 | A quick trial or a prototype | Free hosted API at `https://api.valen-team.workers.dev`, no key |
 | Higher quotas | Keyed endpoint `https://llm-proxy.openxxlab.com` with `Authorization: Bearer $VALEN_API_KEY` |
-| In-process Python or JavaScript, CPU or GPU, text / images / video, `bbox` questions | ONNX through `Valen.local(...)` in the SDK (`valen-sdk` 0.5.0, `@valen-team/sdk` 0.4.0) with the Valen-Decision-1.5 bundles `Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-ONNX`, variants `fp32` and `q8-mlp` on CPU, `cuda-fp16` on NVIDIA GPUs (Python) and, for 0.8B, `web-portable` for browser WebGPU (JavaScript); `bbox` questions use `Bbox` (Python) or `bbox(...)` (JavaScript) |
-| A local HTTP service on CPU | `valen serve` from the Python SDK, or the Valen-Decision-1.0 GGUF models with the Valen-patched llama.cpp / Ollama |
+| In-process Python or JavaScript, CPU or GPU, text / images / video, `bbox` questions | ONNX through `Valen.local(...)` in the SDK (`valen-sdk` 0.5.1, `@valen-team/sdk` 0.4.0) with the Valen-Decision-1.5 bundles `Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-ONNX`, variants `fp32` and `q8-mlp` on CPU, `cuda-fp16` on NVIDIA GPUs (Python) and, for 0.8B, `web-portable` for browser WebGPU (JavaScript); `bbox` questions use `Bbox` (Python) or `bbox(...)` (JavaScript) |
+| A local HTTP service on CPU, `bbox` on image requests | `valen serve` from the Python SDK, or the Valen-Decision-1.5 GGUF models (`Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-GGUF`, Q8_0 for every size, F32 up to 9B) with the Valen custom llama.cpp runtime 0.2.0; Valen-Decision-1.0 GGUF files also run on Ollama |
 | Native Valen-Decision-1.5 weights on your own GPU, any of the five sizes, `bbox` questions | Transformers: `AutoModel.from_pretrained("Valen-Team/Valen-Decision-1.5-0.8B", trust_remote_code=True, dtype="auto", attn_implementation="sdpa")`, then `model.predict` |
 | An existing NVIDIA serving stack | The vLLM or SGLang plugin |
 

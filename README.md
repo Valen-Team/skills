@@ -57,14 +57,14 @@ In Claude Code, invoke the skill explicitly with `/valen:valen`; in Codex, ask f
 
 We gave coding agents a one-page brief (route support messages, sort image uploads, tag video clips), let them build, then ran each agent's first version, unchanged, against Valen and five LLMs.
 
-- **Valen comes within a few points of frontier LLMs, free and 2–3× faster.** First versions built with the skill average 92.6 on Valen-Decision-1.0 4B, against 94–96 on GPT, Gemini and Claude Sonnet.
-- **The skill keeps the first version from breaking.** Without it, 2 of 6 first versions failed on Valen: one sent eight video frames per request to an endpoint that takes one, and scored 0; another thresholded a vague question and marked most images unusable, scoring below 61 on the smaller sizes. With the skill, all 9 held up. LLMs accept eight images and absorb vague questions, so the same mistakes cost them little.
+- **Valen comes within a few points of frontier LLMs, free.** First versions built with the skill average 93.0 on Valen-Decision-1.5 4B and 2B, against 94–96 on GPT, Gemini and Claude Sonnet.
+- **The skill keeps the first version from breaking.** Without it, one of 6 first versions failed on Valen: it sent eight video frames per request to an endpoint that takes one, and scored 0. With the skill, all 9 held up, the worst scoring 83.8 on 0.8B and 91.6 on 2B. LLMs accept eight images, so the same mistake costs them little.
 
 | Model answering the integration's questions | First version with the skill | Worst first version, with skill | Worst, without skill | Cost per 1,000 items, list price | Median time per item |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| **Valen-Decision-1.0 4B** | **92.6** | **84.1** | 0.0 | **$0** | **2.7 s** |
-| **Valen-Decision-1.0 2B** | **91.6** | **86.8** | 0.0 | **$0** | **2.7 s** |
-| **Valen-Decision-1.0 0.8B** | **89.0** | **78.2** | 0.0 | **$0** | **2.6 s** |
+| **Valen-Decision-1.5 4B** | **93.0** | **87.9** | 0.0 | **$0** | **6.3 s** |
+| **Valen-Decision-1.5 2B** | **93.0** | **91.6** | 0.0 | **$0** | **6.6 s** |
+| **Valen-Decision-1.5 0.8B** | **87.8** | **83.8** | 0.0 | **$0** | **4.6 s** |
 | Claude Sonnet 5.5 | 96.1 | 92.2 | 89.5 | $1.93* | 6.8 s |
 | GPT-6 Luna | 95.5 | 90.1 | 89.9 | $0.24 | 6.0 s |
 | GPT-5.6 Terra | 94.1 | 85.4 | 84.7 | $12.22 | 7.4 s |
