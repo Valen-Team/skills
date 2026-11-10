@@ -57,14 +57,14 @@ In Claude Code, invoke the skill explicitly with `/valen:valen`; in Codex, ask f
 
 We gave coding agents a one-page brief (route support messages, sort image uploads, tag video clips), let them build, then ran each agent's first version, unchanged, against Valen and five LLMs.
 
-- **Valen comes within a few points of frontier LLMs, free and 2–3× faster.** First versions built with the skill average 92.6 on Valen 4B, against 94–96 on GPT, Gemini and Claude Sonnet.
+- **Valen comes within a few points of frontier LLMs, free and 2–3× faster.** First versions built with the skill average 92.6 on Valen-Decision-1.0 4B, against 94–96 on GPT, Gemini and Claude Sonnet.
 - **The skill keeps the first version from breaking.** Without it, 2 of 6 first versions failed on Valen: one sent eight video frames per request to an endpoint that takes one, and scored 0; another thresholded a vague question and marked most images unusable, scoring below 61 on the smaller sizes. With the skill, all 9 held up. LLMs accept eight images and absorb vague questions, so the same mistakes cost them little.
 
 | Model answering the integration's questions | First version with the skill | Worst first version, with skill | Worst, without skill | Cost per 1,000 items, list price | Median time per item |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| **Valen 4B** | **92.6** | **84.1** | 0.0 | **$0** | **2.7 s** |
-| **Valen 2B** | **91.6** | **86.8** | 0.0 | **$0** | **2.7 s** |
-| **Valen 0.8B** | **89.0** | **78.2** | 0.0 | **$0** | **2.6 s** |
+| **Valen-Decision-1.0 4B** | **92.6** | **84.1** | 0.0 | **$0** | **2.7 s** |
+| **Valen-Decision-1.0 2B** | **91.6** | **86.8** | 0.0 | **$0** | **2.7 s** |
+| **Valen-Decision-1.0 0.8B** | **89.0** | **78.2** | 0.0 | **$0** | **2.6 s** |
 | Claude Sonnet 5.5 | 96.1 | 92.2 | 89.5 | $1.93* | 6.8 s |
 | GPT-6 Luna | 95.5 | 90.1 | 89.9 | $0.24 | 6.0 s |
 | GPT-5.6 Terra | 94.1 | 85.4 | 84.7 | $12.22 | 7.4 s |

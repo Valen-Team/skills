@@ -12,13 +12,19 @@ description: >
 
 # Build with Valen
 
-Valen (万澜) is a System One decision model in three sizes (0.8B, 2B, 4B). Your application sends
+Valen (万澜) is a System One decision model. The current generation, Valen-Decision-1.5, comes in
+five sizes (0.8B, 2B, 4B, 9B, 27B). Your application sends
 **state**: text, images, or frames from a video. It also sends typed **questions**. Valen answers
 each question with probabilities over the candidates you supplied:
 
 - **Noul** (Decisions: `predicate`): the probability that one statement is true.
 - **Choice**: one of several mutually exclusive candidates, with a distribution over all of them.
 - **Score**: ordered levels you describe; returns the level distribution and the expected index.
+
+Native Valen-Decision-1.5 weights loaded through Transformers (`model.predict`) and the
+Valen-Decision-1.5 ONNX bundles loaded through the SDKs' `Valen.local(...)` also answer
+**`bbox`** questions: a box `[x1, y1, x2, y2]` normalized to 0–1, a `point` `[x, y]` and a
+`confidence`.
 
 Both API protocols run the same model. **System One** (`POST /v1/systemone`) keys questions by
 ID. **Decisions** (`POST /v1/decisions`) uses a question list. Pick the one that matches the
@@ -88,14 +94,17 @@ docs are unreachable, use the protocol table above, or read the types in the ins
 | --- | --- |
 | A quick trial or a prototype | Free hosted API at `https://api.valen-team.workers.dev`, no key |
 | Higher quotas | Keyed endpoint `https://llm-proxy.openxxlab.com` with `Authorization: Bearer $VALEN_API_KEY` |
-| In-process Python or JavaScript, CPU or GPU, text / images / video | ONNX through `Valen.local(...)` in the SDK |
-| A local HTTP service on CPU | `valen serve` from the Python SDK, or GGUF with the Valen-patched llama.cpp / Ollama |
+| In-process Python or JavaScript, CPU or GPU, text / images / video, `bbox` questions | ONNX through `Valen.local(...)` in the SDK (`valen-sdk` 0.5.0, `@valen-team/sdk` 0.4.0) with the Valen-Decision-1.5 bundles `Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-ONNX`, variants `fp32` and `q8-mlp` on CPU; `bbox` questions use `Bbox` (Python) or `bbox(...)` (JavaScript). The Valen-Decision-1.0 repos (`Valen-0.8B-ONNX`, `Valen-2B-ONNX`, `Valen-4B-ONNX`) provide `cuda-fp16` for GPU and `web-portable` for browser WebGPU |
+| A local HTTP service on CPU | `valen serve` from the Python SDK, or the Valen-Decision-1.0 GGUF models with the Valen-patched llama.cpp / Ollama |
+| Native Valen-Decision-1.5 weights on your own GPU, any of the five sizes, `bbox` questions | Transformers: `AutoModel.from_pretrained("Valen-Team/Valen-Decision-1.5-0.8B", trust_remote_code=True, dtype="auto", attn_implementation="sdpa")`, then `model.predict` |
 | An existing NVIDIA serving stack | The vLLM or SGLang plugin |
 
 Both hosted endpoints serve `/v1/systemone`, `/v1/decisions` and `/v1/models`; the SDK's
 `Valen.remote(...)` takes the base URL with `/v1` appended.
 
-Start with 0.8B locally and 2B on the hosted API, then compare 2B and 4B on the user's own cases.
+Start with 0.8B locally and 2B on the hosted API, then compare 2B and 4B on the user's own cases;
+9B and 27B run from the native weights. The hosted endpoints serve Valen-Decision-1.5 0.8B, 2B and
+4B, and each response names the model that answered (`model`, such as `Valen-Decision-1.5-2B`).
 `GET /v1/models` on the hosted endpoints also lists models that are not Valen; use the IDs that
 start with `valen-` (`valen-0.8b`, `valen-2b`, `valen-4b`). Send an explicit `User-Agent` header;
 the free API's edge rejects some default client agents (Python `urllib`) with HTTP 403
