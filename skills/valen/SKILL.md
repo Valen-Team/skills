@@ -21,10 +21,10 @@ each question with probabilities over the candidates you supplied:
 - **Choice**: one of several mutually exclusive candidates, with a distribution over all of them.
 - **Score**: ordered levels you describe; returns the level distribution and the expected index.
 
-Native Valen-Decision-1.5 weights loaded through Transformers (`model.predict`) and the
-Valen-Decision-1.5 ONNX bundles loaded through the SDKs' `Valen.local(...)` also answer
-**`bbox`** questions: a box `[x1, y1, x2, y2]` normalized to 0–1, a `point` `[x, y]` and a
-`confidence`.
+Valen-Decision-1.5 also answers **`bbox`** questions about an image: a box `[x1, y1, x2, y2]`
+normalized to 0–1, a `point` `[x, y]` and a `confidence`. The hosted API, the native weights
+loaded through Transformers (`model.predict`) and the ONNX bundles loaded through the SDKs'
+`Valen.local(...)` all answer them.
 
 Both API protocols run the same model. **System One** (`POST /v1/systemone`) keys questions by
 ID. **Decisions** (`POST /v1/decisions`) uses a question list. Pick the one that matches the
@@ -92,7 +92,7 @@ docs are unreachable, use the protocol table above, or read the types in the ins
 
 | The application needs | Use |
 | --- | --- |
-| A quick trial or a prototype | Free hosted API at `https://api.valen-team.workers.dev`, no key |
+| A quick trial or a prototype, `bbox` questions included | Free hosted API at `https://api.valen-team.workers.dev`, no key |
 | Higher quotas | Keyed endpoint `https://llm-proxy.openxxlab.com` with `Authorization: Bearer $VALEN_API_KEY` |
 | In-process Python or JavaScript, CPU or GPU, text / images / video, `bbox` questions | ONNX through `Valen.local(...)` in the SDK (`valen-sdk` 0.5.1, `@valen-team/sdk` 0.4.0) with the Valen-Decision-1.5 bundles `Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-ONNX`, variants `fp32` and `q8-mlp` on CPU, `cuda-fp16` on NVIDIA GPUs (Python) and, for 0.8B, `web-portable` for browser WebGPU (JavaScript); `bbox` questions use `Bbox` (Python) or `bbox(...)` (JavaScript) |
 | A local HTTP service on CPU, `bbox` on image requests | `valen serve` from the Python SDK, or the Valen-Decision-1.5 GGUF models (`Valen-Team/Valen-Decision-1.5-{0.8B,2B,4B,9B,27B}-GGUF`, Q8_0 for every size, F32 up to 9B) with the Valen custom llama.cpp runtime 0.2.0; Valen-Decision-1.0 GGUF files also run on Ollama |
