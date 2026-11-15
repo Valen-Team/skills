@@ -7,7 +7,8 @@ description: >
   building, reviewing or debugging code that calls Valen (hosted API, Python / JavaScript SDK,
   ONNX, GGUF, vLLM or SGLang); when writing its questions, candidates or state; when replacing an
   LLM prompt-and-parse step, keyword rules or a hand-tuned image heuristic with a typed question;
-  or when choosing a model size and runtime.
+  when choosing a model size and runtime; or when fine-tuning Valen on labeled domain data and
+  exporting the result.
 ---
 
 # Build with Valen
@@ -81,6 +82,10 @@ Read the relevant pages as part of the task.
   [GGUF](https://valen-team.github.io/docs/valen/gguf.md),
   [vLLM](https://valen-team.github.io/docs/valen/vllm-plugin.md),
   [SGLang](https://valen-team.github.io/docs/valen/sglang-plugin.md).
+- Fine-tuning and export: [fine-tuning](https://valen-team.github.io/docs/valen/training.md),
+  [data format](https://valen-team.github.io/docs/valen/data-format.md),
+  [save, resume and export](https://valen-team.github.io/docs/valen/checkpoints.md) and the
+  [domain fine-tuning recipe](https://valen-team.github.io/cookbook/domain-finetuning.md).
 - Complete, tested recipes: the [cookbook](https://valen-team.github.io/cookbook/).
 
 Every `.md` URL has an HTML page at the same path with a trailing slash instead, such as
@@ -307,6 +312,43 @@ particular value is **prompt gymnastics** and tends to break on new inputs and t
 Watch for criteria that name specific test items, a new clause per failing case, thresholds fitted
 to a handful of cases, tests that assert exact probabilities, and code that quietly overrides
 answers. The structural fix is usually better state, a separate question, or code.
+
+## Fine-tune for a domain
+
+Fine-tune when the state and questions already pass the human test and the user has labeled cases
+that Valen still gets wrong. Wording, criteria and thresholds change in minutes, so settle them
+first; fine-tuning then teaches the model the domain itself, such as a company's own ticket
+categories.
+
+1. **Split the data** into train, validation and test by source or conversation, with duplicates
+   and their rewrites in one split. Records follow the
+   [data format](https://valen-team.github.io/docs/valen/data-format.md).
+2. **Train with LoRA from Valen-Decision-1.5-0.8B.** In a checkout of
+   [Valen-Team/Valen](https://github.com/Valen-Team/Valen) (0.4.2 or later), copy
+   `configs/train/qwen/sft_finetune_lora.json`, set the downloaded model directory, the training
+   data and a new output directory, then run `python -m valen.train --config finetune.json`.
+   LoRA loads the full frozen backbone. `sft_finetune_full.json` updates the whole backbone when
+   the memory budget allows.
+3. **Compare with the starting model** on the same independent test set. Choose settings and
+   thresholds on validation.
+4. **Export a standalone model** from a checkpoint whose last step completes an epoch:
+
+   ```bash
+   python scripts/export/qwen/merge_checkpoint.py \
+     --checkpoint output/valen-finetune/lora/latest --output export/my-model --work export/work \
+     --runtime-source . --validation-data /path/to/validation --attn-implementation sdpa
+   ```
+
+   `--validation-data` is a folder with `general.jsonl` (image records covering Choice, Noul and
+   Score) and `video.jsonl`. The tool merges the adapter into the base model, compares predictions
+   before the merge, after it and after reloading, and writes `validation.json`. A fine-tuned
+   Valen-Decision-1.5 model keeps its grounding head, so the export answers `bbox` questions.
+5. **Deploy the export** like a published model: load it with Transformers and check
+   `model.predict` on the test set, then convert to ONNX or GGUF as in [Pick a runtime](#pick-a-runtime).
+   Version the exported model together with the question set.
+
+The [domain fine-tuning recipe](https://valen-team.github.io/cookbook/domain-finetuning.md) has a
+data template and runnable steps.
 
 ## Patterns
 
